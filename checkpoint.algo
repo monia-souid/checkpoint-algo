@@ -1,0 +1,25 @@
+ALGORITHM cacul_phrase
+VAR
+    c : CHAR;
+    nb_car : INTEGER := 0;
+    nb_mot : INTEGER := 1;
+    nb_voy : INTEGER := 0;
+    phrase : STRING;
+
+BEGIN
+    Write("Donner une phrase qui se termine par un point");
+    Read (phrase);
+    WHILE (c <> '.') DO
+    Read(c)
+        nb_car := nb_car+1;
+        Write("La longueur de la phrase est:" , nb_car);
+        IF (c = " ") THEN
+            nb_mot := nb_mot + 1;
+            Write("Le nombre de mots est : " , nb_mot);
+        END_IF
+        IF (c = 'a' OR  c = 'e' OR c = 'i' OR c = 'o' OR c = 'u' OR c = 'y')  THEN
+            nb_voy := nb_voy + 1;
+            Write("Le nombre de voyelles est :" , nb_voy);
+        END_IF
+    END_WHILE
+END
